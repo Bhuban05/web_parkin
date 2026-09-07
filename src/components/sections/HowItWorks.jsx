@@ -54,7 +54,7 @@ export default function HowItWorks() {
                 <CardContent className="p-7">
                   {/* Top row */}
                   <div className="flex items-center justify-between mb-6">
-                    <span className="font-display text-4xl font-bold text-brand/40 group-hover:text-brand/60 transition-colors duration-200">
+                    <span className="font-display text-5xl font-bold text-brand transition-colors duration-200">
                       {step.order}
                     </span>
                     <div className="h-9 w-9 rounded-lg bg-brand/8 group-hover:bg-brand/12 flex items-center justify-center transition-colors duration-200">
