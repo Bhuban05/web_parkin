@@ -57,7 +57,7 @@ export default function Navbar() {
             className="flex items-center group"
             whileTap={{ scale: 0.97 }}
           >
-            <ParkInLogo variant="logo" mode="dark" className="transition-colors duration-200 group-hover:text-brand-light" />
+            <ParkInLogo variant="logo" mode="dark" size="md" className="transition-all duration-200 group-hover:scale-105" />
           </motion.a>
 
           {/* Desktop nav */}

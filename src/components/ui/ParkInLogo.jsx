@@ -10,47 +10,6 @@
  * @typedef {'light' | 'dark'} Mode
  */
 
-const COLORS = {
-  light: {
-    primary: "currentColor",
-    iconBg: "#2BA8DE",
-    iconP: "#ffffff",
-    iconDetail: "#1E8FC4",
-    wordmark: "text-heading",
-    dot: "text-brand",
-  },
-  dark: {
-    primary: "currentColor",
-    iconBg: "#2BA8DE",
-    iconP: "#ffffff",
-    iconDetail: "#1E8FC4",
-    wordmark: "text-white",
-    dot: "text-brand-light",
-  },
-};
-
-function ParkingIcon({ mode, className = "" }) {
-  const c = COLORS[mode] || COLORS.dark;
-
-  return (
-    <svg
-      viewBox="0 0 36 36"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-hidden="true"
-    >
-      {/* Rounded square background */}
-      <rect width="36" height="36" rx="8" fill={c.iconBg} />
-      {/* P letter */}
-      <path
-        d="M11 26V10h6c3.3 0 5.5 2 5.5 5s-2.2 5-5.5 5H15v6h-4zm4-10h2c1.1 0 2-.9 2-2s-.9-2-2-2h-2v4z"
-        fill={c.iconP}
-      />
-    </svg>
-  );
-}
-
 /**
  * ParkInLogo
  * @param {object} props
@@ -66,15 +25,14 @@ export default function ParkInLogo({
   size,
 }) {
   const sizeClasses = {
-    xs: "w-5 h-5",
-    sm: "w-6 h-6",
-    md: "w-8 h-8",
-    lg: "w-10 h-10",
-    xl: "w-12 h-12",
+    xs: "w-12 h-12",
+    sm: "w-16 h-16",
+    md: "w-20 h-20",
+    lg: "w-28 h-28",
+    xl: "w-36 h-36",
   };
 
-  const iconSize = size ? sizeClasses[size] || "w-8 h-8" : "w-8 h-8";
-  const colors = COLORS[mode] || COLORS.dark;
+  const logoSize = size ? sizeClasses[size] || "w-20 h-20" : "w-20 h-20";
 
   // Icon only
   if (variant === "icon") {
@@ -84,7 +42,11 @@ export default function ParkInLogo({
         role="img"
         aria-label="Park_in logo"
       >
-        <ParkingIcon mode={mode} className={iconSize} />
+        <img
+          src="/images/logo.png"
+          alt="Park_in"
+          className={`${logoSize} object-contain`}
+        />
       </span>
     );
   }
@@ -97,22 +59,27 @@ export default function ParkInLogo({
         role="img"
         aria-label="Park_in"
       >
-        <ParkingIcon mode={mode} className={iconSize} />
-        <span className={`inline-flex items-baseline select-none font-body font-bold tracking-[0.14em] text-[1.1em] ${colors.wordmark}`}>
-          Park<span className={`${colors.dot} text-[1.2em] leading-none`}>_</span>in
-        </span>
+        <img
+          src="/images/logo.png"
+          alt="Park_in"
+          className={`${logoSize} object-contain`}
+        />
       </span>
     );
   }
 
-  // Wordmark only (default)
+  // Wordmark only (default) — use image for all modes since it has the text
   return (
     <span
-      className={`inline-flex items-baseline select-none font-body font-bold tracking-[0.14em] text-[1.1em] ${colors.wordmark} ${className}`}
+      className={`inline-flex items-center select-none ${className}`}
       role="img"
       aria-label="Park_in"
     >
-      Park<span className={`${colors.dot} text-[1.2em] leading-none`}>_</span>in
+      <img
+        src="/images/logo.png"
+        alt="Park_in"
+        className={`${logoSize} object-contain`}
+      />
     </span>
   );
 }
