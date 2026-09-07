@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 98%;
+    --foreground: 222 47% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 8%;
+    --primary: 199 76% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 213 32% 17%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 214 20% 65%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 37 85% 56%;
+    --accent-foreground: 222 47% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 199 76% 52%;
+    --radius: 0.75rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-body font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-medium tracking-tight text-heading;
+  }
+
+  h1 {
+    @apply text-5xl sm:text-6xl lg:text-7xl leading-[1.08];
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl lg:text-5xl leading-[1.15];
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl leading-snug;
+  }
+
+  ::selection {
+    background-color: #2BA8DE;
+    color: #ffffff;
+  }
+
+  /* Smooth interactions — exclude animation-sensitive elements */
+  a,
+  button {
+    @apply transition-colors duration-200;
+    outline-offset: 4px;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible {
+    outline: 2px solid #2BA8DE;
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+
+  /* Respect motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-premium {
+    @apply mx-auto max-w-content px-5 sm:px-8 lg:px-10;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Gradient text utility */
+  .text-gradient-brand {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #2BA8DE 0%, #1F8A9C 50%, #F5A623 100%);
+  }
+
+  /* Glass morphism card */
+  .glass-card {
+    @apply rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl;
+  }
+
+  /* Premium section divider */
+  .section-divider {
+    @apply h-px w-full;
+    background: linear-gradient(90deg, transparent 0%, #2BA8DE 20%, #F5A623 80%, transparent 100%);
+    opacity: 0.3;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
