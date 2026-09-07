@@ -25,27 +25,27 @@ export default function ParkInLogo({
   size,
 }) {
   const sizeClasses = {
-    xs: "w-12 h-12",
-    sm: "w-16 h-16",
-    md: "w-20 h-20",
-    lg: "w-28 h-28",
-    xl: "w-36 h-36",
+    xs: "w-8 h-8",
+    sm: "w-12 h-12",
+    md: "w-16 h-16",
+    lg: "w-20 h-20",
+    xl: "w-28 h-28",
   };
 
-  const logoSize = size ? sizeClasses[size] || "w-20 h-20" : "w-20 h-20";
+  const logoSize = size ? sizeClasses[size] || "w-16 h-16" : "w-16 h-16";
 
   // Icon only
   if (variant === "icon") {
     return (
       <span
-        className={`inline-flex items-center justify-center ${className}`}
+        className={`inline-flex items-center justify-center rounded-xl overflow-hidden ${className}`}
         role="img"
         aria-label="Park_in logo"
       >
         <img
-          src="/images/logo.png"
+          src="/images/logo.jpeg"
           alt="Park_in"
-          className={`${logoSize} object-contain`}
+          className={`${logoSize} object-cover`}
         />
       </span>
     );
@@ -55,31 +55,41 @@ export default function ParkInLogo({
   if (variant === "logo") {
     return (
       <span
-        className={`inline-flex items-center gap-2 ${className}`}
+        className={`inline-flex items-center gap-2.5 ${className}`}
         role="img"
         aria-label="Park_in"
       >
-        <img
-          src="/images/logo.png"
-          alt="Park_in"
-          className={`${logoSize} object-contain`}
-        />
+        <span className="inline-flex items-center justify-center rounded-xl overflow-hidden">
+          <img
+            src="/images/logo.jpeg"
+            alt="Park_in"
+            className={`${logoSize} object-cover`}
+          />
+        </span>
+        <span className={`font-body font-bold tracking-wide text-lg ${mode === "dark" ? "text-white" : "text-heading"}`}>
+          Park<span className="text-brand">_</span>in
+        </span>
       </span>
     );
   }
 
-  // Wordmark only (default) — use image for all modes since it has the text
+  // Wordmark only (default) — image + text
   return (
     <span
-      className={`inline-flex items-center select-none ${className}`}
+      className={`inline-flex items-center gap-2.5 select-none ${className}`}
       role="img"
       aria-label="Park_in"
     >
-      <img
-        src="/images/logo.png"
-        alt="Park_in"
-        className={`${logoSize} object-contain`}
-      />
+      <span className="inline-flex items-center justify-center rounded-xl overflow-hidden">
+        <img
+          src="/images/logo.jpeg"
+          alt="Park_in"
+          className={`${logoSize} object-cover`}
+        />
+      </span>
+      <span className={`font-body font-bold tracking-wide text-lg ${mode === "dark" ? "text-white" : "text-heading"}`}>
+        Park<span className="text-brand">_</span>in
+      </span>
     </span>
   );
 }

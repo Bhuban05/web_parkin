@@ -38,7 +38,7 @@ export default function Footer() {
           <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <motion.div variants={fadeUp} className="mb-4">
               <a href="#top" className="inline-flex items-center">
-                <ParkInLogo variant="logo" mode="dark" size="lg" />
+                <ParkInLogo variant="logo" mode="dark" size="md" />
               </a>
             </motion.div>
             <motion.p variants={fadeUp} className="text-sm text-white/50 leading-relaxed max-w-[220px]">
