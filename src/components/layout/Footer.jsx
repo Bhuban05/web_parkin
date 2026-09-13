@@ -129,7 +129,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/40">
-            © {year} Park_in. All rights reserved.
+            © {year} ParkInn. All rights reserved.
           </p>
           <div className="flex items-center gap-3">
             {[

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CONTACT } from "../../data/content";
 
-const WHATSAPP_URL = `https://wa.me/${CONTACT.whatsapp}?text=Hi%2C%20I%27m%20interested%20in%20Park_in.`;
+const WHATSAPP_URL = `https://wa.me/${CONTACT.whatsapp}?text=Hi%2C%20I%27m%20interested%20in%20ParkInn.`;
 
 export default function FloatingButton() {
   const [show, setShow] = useState(false);

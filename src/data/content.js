@@ -1,5 +1,5 @@
 /**
- * Park_in Landing Page Copy
+ * ParkInn Landing Page Copy
  * Kathmandu-specific messaging and brand voice
  */
 
@@ -150,7 +150,7 @@ export const FOOTER_LINKS = {
     { label: "Pricing", href: "#pricing" },
   ],
   company: [
-    { label: "About Park_in", href: "/about" },
+    { label: "About ParkInn", href: "/about" },
     { label: "Blog", href: "/blog" },
     { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },

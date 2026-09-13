@@ -40,11 +40,11 @@ export default function ParkInLogo({
       <span
         className={`inline-flex items-center justify-center rounded-xl overflow-hidden ${className}`}
         role="img"
-        aria-label="Park_in logo"
+        aria-label="ParkInn logo"
       >
         <img
           src="/images/logo.jpeg"
-          alt="Park_in"
+          alt="ParkInn"
           className={`${logoSize} object-cover`}
         />
       </span>
@@ -57,17 +57,17 @@ export default function ParkInLogo({
       <span
         className={`inline-flex items-center gap-2.5 ${className}`}
         role="img"
-        aria-label="Park_in"
+        aria-label="ParkInn"
       >
         <span className="inline-flex items-center justify-center rounded-xl overflow-hidden">
           <img
             src="/images/logo.jpeg"
-            alt="Park_in"
+            alt="ParkInn"
             className={`${logoSize} object-cover`}
           />
         </span>
         <span className={`font-body font-bold tracking-wide text-lg ${mode === "dark" ? "text-white" : "text-heading"}`}>
-          Park<span className="text-brand">_</span>in
+          Park<span className="text-brand">Inn</span>
         </span>
       </span>
     );
@@ -78,12 +78,12 @@ export default function ParkInLogo({
     <span
       className={`inline-flex items-center gap-2.5 select-none ${className}`}
       role="img"
-      aria-label="Park_in"
+      aria-label="ParkInn"
     >
       <span className="inline-flex items-center justify-center rounded-xl overflow-hidden">
         <img
           src="/images/logo.jpeg"
-          alt="Park_in"
+          alt="ParkInn"
           className={`${logoSize} object-cover`}
         />
       </span>
